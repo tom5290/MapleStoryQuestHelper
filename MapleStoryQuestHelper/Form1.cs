@@ -253,5 +253,20 @@ namespace MapleStoryQuestHelper
             MonsterQty = qty;
             NPC = npcId;
         }
+
+        private void instructions__Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("1. 퀘스트 넘버와 이름을 모두 작성 한 뒤에 CreateXmlFile, Create .Js File 버튼을 눌러주세요.\n\n");
+            sb.Append("2. 해당 area 번호를 작성 해주세요.\n\n");
+            sb.Append("3. reward를 모두 작성 해주세요.\n\n");
+            sb.Append("4. Monster 1,2,3 코드를 모두 작성  한 뒤에 Add 버튼을 모두 눌러주세요.\n\n");
+            sb.Append("5. MonsterQty, MapId, NpcId 를 모두 작성한뒤 Setting 버튼을 눌러주세요.\n\n");
+            sb.Append("6. writeXml, WriteJs 버튼을 눌러주세요.");
+
+            string instructions = sb.ToString();
+            MessageBox.Show(instructions);
+            return;
+        }
     }
 }

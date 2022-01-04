@@ -62,6 +62,7 @@ namespace MapleStoryQuestHelper
             this.set_npcId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.instructions_ = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TextQuestInfoNum
@@ -370,12 +371,25 @@ namespace MapleStoryQuestHelper
             this.label6.TabIndex = 31;
             this.label6.Text = "Made By. kakekuro";
             // 
+            // instructions_
+            // 
+            this.instructions_.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.instructions_.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.instructions_.Location = new System.Drawing.Point(754, 420);
+            this.instructions_.Name = "instructions_";
+            this.instructions_.Size = new System.Drawing.Size(137, 50);
+            this.instructions_.TabIndex = 32;
+            this.instructions_.Text = "사용법";
+            this.instructions_.UseVisualStyleBackColor = true;
+            this.instructions_.Click += new System.EventHandler(this.instructions__Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(904, 494);
+            this.Controls.Add(this.instructions_);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.set_npcId);
@@ -452,6 +466,7 @@ namespace MapleStoryQuestHelper
         private System.Windows.Forms.TextBox set_npcId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button instructions_;
     }
 }
 
