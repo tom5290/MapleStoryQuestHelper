@@ -281,5 +281,45 @@ namespace MapleStoryQuestHelper
                 daily_q = true;
             }
         }
+
+        private void create_checkXml()
+        {
+            var checkXml = checkData.Text;
+            string path = $"C:\\test\\{checkXml}";
+
+
+            if (!File.Exists(path))
+            {
+                File.Create(path);
+                MessageBox.Show("Successfully create check.xml File");
+            }
+        }
+
+        private void write_check_xml(string path)
+        {
+            StreamWriter writer;
+            writer = File.AppendText(path);
+
+            writer.WriteLine("</imgdir>");
+            writer.WriteLine("<imgdir name = \"0\"");
+            writer.WriteLine($"<int name = \"npc\" value = \"{NPC}\"/>");
+            writer.WriteLine($"<int name = \"infoNumber\" value = \"{InputqNum.Text}\"/>");
+            writer.WriteLine($"<imgdir name = \"infoex\">");
+            writer.WriteLine($"<imgdir name = \"0\">");
+            writer.WriteLine($"int name = \"order\" value \"1\"/>");
+            writer.WriteLine($"<string name = \"value\" value = \"999\"/>");
+            writer.WriteLine($"<int name = \"cond\" value = \"1\"");
+            writer.WriteLine($"<string name = \"exVariable\" value = \"not\" />");
+            writer.WriteLine("</imgdir>");
+            writer.WriteLine("</imgdir>");
+            writer.WriteLine("</imgdir>");
+
+            // Data
+            writer.WriteLine("<imgdir name =\"1\"");
+        }
+        private void create_checkData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
