@@ -321,7 +321,9 @@ namespace MapleStoryQuestHelper
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 212);
+            this.treeView1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.treeView1.LineColor = System.Drawing.Color.White;
+            this.treeView1.Location = new System.Drawing.Point(12, 218);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(1078, 10);
             this.treeView1.TabIndex = 34;
