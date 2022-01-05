@@ -138,6 +138,14 @@ namespace MapleStoryQuestHelper
                 r_sb2.Append($"#t{rewardEntry[i]}:#");
             }
             XMLwriter.WriteLine($"<string name = \"rewardSummary\" value = \"{r_sb.ToString()}\"  {r_sb2.ToString()}");
+            if (daily_q == true)
+            {
+                XMLwriter.WriteLine("<int name = \"dailyAlarm\" value \"1\"/>");
+            } else
+            {
+                XMLwriter.WriteLine("<int name = \"dailyAlarm\" value \"0\"/>");
+            }
+            XMLwriter.WriteLine("</imgdir>");
             XMLwriter.Close();
             MessageBox.Show("Sucessfully write XML code");
         }
