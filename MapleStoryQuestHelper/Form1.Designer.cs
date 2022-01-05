@@ -57,6 +57,7 @@ namespace MapleStoryQuestHelper
             this.instructions_ = new System.Windows.Forms.Button();
             this.r_check = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.daily_q_check = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // TextQuestInfoNum
@@ -328,12 +329,25 @@ namespace MapleStoryQuestHelper
             this.treeView1.Size = new System.Drawing.Size(1078, 10);
             this.treeView1.TabIndex = 34;
             // 
+            // daily_q_check
+            // 
+            this.daily_q_check.AutoSize = true;
+            this.daily_q_check.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.daily_q_check.Location = new System.Drawing.Point(248, 42);
+            this.daily_q_check.Name = "daily_q_check";
+            this.daily_q_check.Size = new System.Drawing.Size(94, 18);
+            this.daily_q_check.TabIndex = 35;
+            this.daily_q_check.Text = "dailyQuest";
+            this.daily_q_check.UseVisualStyleBackColor = true;
+            this.daily_q_check.CheckedChanged += new System.EventHandler(this.daily_q_check_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1102, 556);
+            this.Controls.Add(this.daily_q_check);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.r_check);
             this.Controls.Add(this.instructions_);
@@ -400,6 +414,7 @@ namespace MapleStoryQuestHelper
         private System.Windows.Forms.Button instructions_;
         private System.Windows.Forms.Button r_check;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.CheckBox daily_q_check;
     }
 }
 

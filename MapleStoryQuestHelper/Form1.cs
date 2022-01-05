@@ -26,6 +26,9 @@ namespace MapleStoryQuestHelper
         string NPC;
         string mapCode;
         string MonsterQty;
+
+        // Daily Quest Checking
+        private bool daily_q = false;
        
         public Form1()
         {
@@ -98,6 +101,9 @@ namespace MapleStoryQuestHelper
         private void XmlWriteQuest(string path) 
         {
             StreamWriter XMLwriter;
+            StringBuilder m_sb = new StringBuilder();
+            StringBuilder r_sb = new StringBuilder();
+            StringBuilder r_sb2 = new StringBuilder();
             XMLwriter = File.AppendText(path);
             // Quest Handling
             XMLwriter.WriteLine($"<imgdir name=\"{InputqNum.Text}>\""); // write QuestNumber
@@ -108,10 +114,30 @@ namespace MapleStoryQuestHelper
             // Monster Data Add
             for (int i = 0; i < m_num; i++)
             {
-                XMLwriter.WriteLine($"<string name = \"{i}\" value = #b#o{monsterEntry[i]}##k을 #r{MonsterQty}#k명 퇴치하고 #b#m{mapCode}:##k의 #b#p{NPC}:##k에게 가자");
+                XMLwriter.WriteLine($"<string name = \"{i}\" value = \"#b#o{monsterEntry[i]}##k을 #r{MonsterQty}#k명 퇴치하고 #b#m{mapCode}:##k의 #b#p{NPC}:##k에게 가자./>\"");
             }
-            XMLwriter.WriteLine($"<string name = \"{m_num + 1}\" value = #b#p{NPC}");
-            XMLwriter.WriteLine($"<string name = \"demandSummary\" value = \"#questorder1##o{monsterEntry[0]}# #a{InputqNum.Text}#\n/>");
+            for (int i = 0; i < m_num; i++) 
+            {
+               XMLwriter.WriteLine($"<string name = \"{m_num + i}\" value = \"#b#p{NPC}##k가 의뢰한 #b#o{monsterEntry[i]}:##k #r 200명 퇴치를 완료했다.\"");
+            }
+
+            // Monster demandSummary
+            for (int i = 0; i  < m_num; i ++)
+            {
+                m_sb.Append($"#o{monsterEntry[i]}# ");
+            }
+            XMLwriter.WriteLine($"<string name = \"demandSummary\" value = \"#questorder1#{m_sb.ToString()} #a{InputqNum.Text}1#\n/>\n");
+
+            // rewardSummary
+            for (int i = 0; i < r_num; i++)
+            {
+                r_sb.Append($"  #i{rewardEntry[i]}:#  ");
+            }
+            for (int i = 0; i <r_num; i++)
+            {
+                r_sb2.Append($"#t{rewardEntry[i]}:#");
+            }
+            XMLwriter.WriteLine($"<string name = \"rewardSummary\" value = \"{r_sb.ToString()}\"  {r_sb2.ToString()}");
             XMLwriter.Close();
             MessageBox.Show("Sucessfully write XML code");
         }
@@ -238,6 +264,14 @@ namespace MapleStoryQuestHelper
         private void area_TextChanged(object sender, EventArgs e)
         {
             area.MaxLength = 4;
+        }
+
+        private void daily_q_check_CheckedChanged(object sender, EventArgs e)
+        {
+            if (daily_q_check.Checked)
+            {
+                daily_q = true;
+            }
         }
     }
 }
