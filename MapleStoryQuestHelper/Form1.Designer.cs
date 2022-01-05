@@ -249,6 +249,7 @@ namespace MapleStoryQuestHelper
             this.m_qty.Name = "m_qty";
             this.m_qty.Size = new System.Drawing.Size(84, 21);
             this.m_qty.TabIndex = 25;
+            this.m_qty.TextChanged += new System.EventHandler(this.m_qty_TextChanged);
             // 
             // label4
             // 
@@ -366,6 +367,7 @@ namespace MapleStoryQuestHelper
             this.button3.TabIndex = 38;
             this.button3.Text = "write check.xml";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // checkData
             // 
@@ -374,7 +376,6 @@ namespace MapleStoryQuestHelper
             this.checkData.Name = "checkData";
             this.checkData.Size = new System.Drawing.Size(114, 21);
             this.checkData.TabIndex = 39;
-            this.checkData.Text = "Check.xml";
             this.checkData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1

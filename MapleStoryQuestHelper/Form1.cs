@@ -316,10 +316,54 @@ namespace MapleStoryQuestHelper
 
             // Data
             writer.WriteLine("<imgdir name =\"1\"");
+            writer.WriteLine($"<int name = \"npc\" value = \"{NPC}\"/>");
+            writer.WriteLine("<int name = \"order\" value = \"1\"/>");
+            writer.WriteLine($"<string name = \"endscript\" value \"q{InputqNum.Text}e\"/>");
+            
+            writer.WriteLine("<imgdir name = \"mob\">");
+            
+            for (int i = 0; i <m_num; i++)
+            {
+                writer.WriteLine($"<imgdir name = \"{i}\">");
+                writer.WriteLine($"<int name = \"id\" value = \"{monsterEntry[i]}\"/>");
+                writer.WriteLine($"<int name = \"count\" value = \"{m_qty.Text}\"/>");
+                writer.WriteLine($"<int name = \"order\" value = \"1\"");
+                writer.WriteLine("</imgdir>");
+            }
+            for (int i = 0; i <m_num; i ++)
+            {
+                writer.WriteLine("</imgdir>");
+            }
+
+            writer.Close();
+            MessageBox.Show("Successfully Check.xml Data");
         }
         private void create_checkData_Click(object sender, EventArgs e)
         {
+            var a = checkData.Text;
+            string path = $"C:\\test\\{a}check.xml";
 
+            if (!File.Exists(path))
+            {
+                using (File.Create(path))
+                {
+                    MessageBox.Show("create check.xml");
+                }
+            }
+
+        }
+
+        private void m_qty_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var a = checkData.Text;
+            string path = $"C:\\test\\{a}check.xml";
+
+            write_check_xml(path);
         }
     }
 }
