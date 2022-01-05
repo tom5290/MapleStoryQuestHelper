@@ -43,17 +43,9 @@ namespace MapleStoryQuestHelper
             this.label3 = new System.Windows.Forms.Label();
             this.rwAdd = new System.Windows.Forms.Button();
             this.InputReward = new System.Windows.Forms.TextBox();
-            this.rwAdd_2 = new System.Windows.Forms.Button();
-            this.rwAdd_3 = new System.Windows.Forms.Button();
-            this.InputReward2 = new System.Windows.Forms.TextBox();
-            this.InputReward3 = new System.Windows.Forms.TextBox();
             this.MosnterAdd = new System.Windows.Forms.Label();
             this.MonsterAdd_1 = new System.Windows.Forms.TextBox();
-            this.MonsterAdd_2 = new System.Windows.Forms.TextBox();
-            this.MonsterAdd_3 = new System.Windows.Forms.TextBox();
             this.m_add_1 = new System.Windows.Forms.Button();
-            this.m_add_2 = new System.Windows.Forms.Button();
-            this.m_add_3 = new System.Windows.Forms.Button();
             this.NeededSet = new System.Windows.Forms.Button();
             this.m_qty = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,6 +55,7 @@ namespace MapleStoryQuestHelper
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.instructions_ = new System.Windows.Forms.Button();
+            this.r_check = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TextQuestInfoNum
@@ -175,6 +168,7 @@ namespace MapleStoryQuestHelper
             this.area.Size = new System.Drawing.Size(52, 21);
             this.area.TabIndex = 9;
             this.area.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.area.TextChanged += new System.EventHandler(this.area_TextChanged);
             // 
             // label3
             // 
@@ -206,42 +200,6 @@ namespace MapleStoryQuestHelper
             this.InputReward.TabIndex = 12;
             this.InputReward.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // rwAdd_2
-            // 
-            this.rwAdd_2.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rwAdd_2.Location = new System.Drawing.Point(329, 75);
-            this.rwAdd_2.Name = "rwAdd_2";
-            this.rwAdd_2.Size = new System.Drawing.Size(71, 30);
-            this.rwAdd_2.TabIndex = 13;
-            this.rwAdd_2.Text = "ADD 1";
-            this.rwAdd_2.UseVisualStyleBackColor = true;
-            this.rwAdd_2.Click += new System.EventHandler(this.rwAdd_2_Click);
-            // 
-            // rwAdd_3
-            // 
-            this.rwAdd_3.Font = new System.Drawing.Font("돋움", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rwAdd_3.Location = new System.Drawing.Point(329, 111);
-            this.rwAdd_3.Name = "rwAdd_3";
-            this.rwAdd_3.Size = new System.Drawing.Size(71, 30);
-            this.rwAdd_3.TabIndex = 14;
-            this.rwAdd_3.Text = "ADD 2";
-            this.rwAdd_3.UseVisualStyleBackColor = true;
-            this.rwAdd_3.Click += new System.EventHandler(this.rwAdd_3_Click);
-            // 
-            // InputReward2
-            // 
-            this.InputReward2.Location = new System.Drawing.Point(243, 75);
-            this.InputReward2.Name = "InputReward2";
-            this.InputReward2.Size = new System.Drawing.Size(79, 21);
-            this.InputReward2.TabIndex = 15;
-            // 
-            // InputReward3
-            // 
-            this.InputReward3.Location = new System.Drawing.Point(243, 112);
-            this.InputReward3.Name = "InputReward3";
-            this.InputReward3.Size = new System.Drawing.Size(78, 21);
-            this.InputReward3.TabIndex = 16;
-            // 
             // MosnterAdd
             // 
             this.MosnterAdd.AutoSize = true;
@@ -258,23 +216,9 @@ namespace MapleStoryQuestHelper
             this.MonsterAdd_1.Size = new System.Drawing.Size(83, 21);
             this.MonsterAdd_1.TabIndex = 18;
             // 
-            // MonsterAdd_2
-            // 
-            this.MonsterAdd_2.Location = new System.Drawing.Point(416, 77);
-            this.MonsterAdd_2.Name = "MonsterAdd_2";
-            this.MonsterAdd_2.Size = new System.Drawing.Size(82, 21);
-            this.MonsterAdd_2.TabIndex = 19;
-            this.MonsterAdd_2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // MonsterAdd_3
-            // 
-            this.MonsterAdd_3.Location = new System.Drawing.Point(416, 112);
-            this.MonsterAdd_3.Name = "MonsterAdd_3";
-            this.MonsterAdd_3.Size = new System.Drawing.Size(83, 21);
-            this.MonsterAdd_3.TabIndex = 20;
-            // 
             // m_add_1
             // 
+            this.m_add_1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_add_1.Location = new System.Drawing.Point(511, 41);
             this.m_add_1.Name = "m_add_1";
             this.m_add_1.Size = new System.Drawing.Size(70, 31);
@@ -283,31 +227,12 @@ namespace MapleStoryQuestHelper
             this.m_add_1.UseVisualStyleBackColor = true;
             this.m_add_1.Click += new System.EventHandler(this.m_add_1_Click);
             // 
-            // m_add_2
-            // 
-            this.m_add_2.Location = new System.Drawing.Point(511, 78);
-            this.m_add_2.Name = "m_add_2";
-            this.m_add_2.Size = new System.Drawing.Size(70, 27);
-            this.m_add_2.TabIndex = 22;
-            this.m_add_2.Text = "add";
-            this.m_add_2.UseVisualStyleBackColor = true;
-            this.m_add_2.Click += new System.EventHandler(this.m_add_2_Click);
-            // 
-            // m_add_3
-            // 
-            this.m_add_3.Location = new System.Drawing.Point(511, 113);
-            this.m_add_3.Name = "m_add_3";
-            this.m_add_3.Size = new System.Drawing.Size(69, 28);
-            this.m_add_3.TabIndex = 23;
-            this.m_add_3.Text = "add";
-            this.m_add_3.UseVisualStyleBackColor = true;
-            this.m_add_3.Click += new System.EventHandler(this.m_add_3_Click);
-            // 
             // NeededSet
             // 
-            this.NeededSet.Location = new System.Drawing.Point(518, 185);
+            this.NeededSet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NeededSet.Location = new System.Drawing.Point(504, 105);
             this.NeededSet.Name = "NeededSet";
-            this.NeededSet.Size = new System.Drawing.Size(95, 123);
+            this.NeededSet.Size = new System.Drawing.Size(95, 101);
             this.NeededSet.TabIndex = 24;
             this.NeededSet.Text = "Setting";
             this.NeededSet.UseVisualStyleBackColor = true;
@@ -315,7 +240,7 @@ namespace MapleStoryQuestHelper
             // 
             // m_qty
             // 
-            this.m_qty.Location = new System.Drawing.Point(427, 184);
+            this.m_qty.Location = new System.Drawing.Point(416, 105);
             this.m_qty.Name = "m_qty";
             this.m_qty.Size = new System.Drawing.Size(84, 21);
             this.m_qty.TabIndex = 25;
@@ -323,7 +248,7 @@ namespace MapleStoryQuestHelper
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(427, 164);
+            this.label4.Location = new System.Drawing.Point(414, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 12);
             this.label4.TabIndex = 26;
@@ -332,7 +257,7 @@ namespace MapleStoryQuestHelper
             // Set_MapIds
             // 
             this.Set_MapIds.AutoSize = true;
-            this.Set_MapIds.Location = new System.Drawing.Point(427, 208);
+            this.Set_MapIds.Location = new System.Drawing.Point(414, 129);
             this.Set_MapIds.Name = "Set_MapIds";
             this.Set_MapIds.Size = new System.Drawing.Size(40, 12);
             this.Set_MapIds.TabIndex = 27;
@@ -340,14 +265,14 @@ namespace MapleStoryQuestHelper
             // 
             // set_mapId
             // 
-            this.set_mapId.Location = new System.Drawing.Point(429, 224);
+            this.set_mapId.Location = new System.Drawing.Point(416, 144);
             this.set_mapId.Name = "set_mapId";
             this.set_mapId.Size = new System.Drawing.Size(82, 21);
             this.set_mapId.TabIndex = 28;
             // 
             // set_npcId
             // 
-            this.set_npcId.Location = new System.Drawing.Point(427, 270);
+            this.set_npcId.Location = new System.Drawing.Point(415, 185);
             this.set_npcId.Name = "set_npcId";
             this.set_npcId.Size = new System.Drawing.Size(83, 21);
             this.set_npcId.TabIndex = 29;
@@ -355,7 +280,7 @@ namespace MapleStoryQuestHelper
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(427, 254);
+            this.label5.Location = new System.Drawing.Point(414, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 12);
             this.label5.TabIndex = 30;
@@ -383,12 +308,23 @@ namespace MapleStoryQuestHelper
             this.instructions_.UseVisualStyleBackColor = true;
             this.instructions_.Click += new System.EventHandler(this.instructions__Click);
             // 
+            // r_check
+            // 
+            this.r_check.Location = new System.Drawing.Point(332, 10);
+            this.r_check.Name = "r_check";
+            this.r_check.Size = new System.Drawing.Size(67, 28);
+            this.r_check.TabIndex = 33;
+            this.r_check.Text = "check";
+            this.r_check.UseVisualStyleBackColor = true;
+            this.r_check.Click += new System.EventHandler(this.r_check_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(904, 494);
+            this.Controls.Add(this.r_check);
             this.Controls.Add(this.instructions_);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -398,17 +334,9 @@ namespace MapleStoryQuestHelper
             this.Controls.Add(this.label4);
             this.Controls.Add(this.m_qty);
             this.Controls.Add(this.NeededSet);
-            this.Controls.Add(this.m_add_3);
-            this.Controls.Add(this.m_add_2);
             this.Controls.Add(this.m_add_1);
-            this.Controls.Add(this.MonsterAdd_3);
-            this.Controls.Add(this.MonsterAdd_2);
             this.Controls.Add(this.MonsterAdd_1);
             this.Controls.Add(this.MosnterAdd);
-            this.Controls.Add(this.InputReward3);
-            this.Controls.Add(this.InputReward2);
-            this.Controls.Add(this.rwAdd_3);
-            this.Controls.Add(this.rwAdd_2);
             this.Controls.Add(this.InputReward);
             this.Controls.Add(this.rwAdd);
             this.Controls.Add(this.label3);
@@ -447,17 +375,9 @@ namespace MapleStoryQuestHelper
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button rwAdd;
         private System.Windows.Forms.TextBox InputReward;
-        private System.Windows.Forms.Button rwAdd_2;
-        private System.Windows.Forms.Button rwAdd_3;
-        private System.Windows.Forms.TextBox InputReward2;
-        private System.Windows.Forms.TextBox InputReward3;
         private System.Windows.Forms.Label MosnterAdd;
         private System.Windows.Forms.TextBox MonsterAdd_1;
-        private System.Windows.Forms.TextBox MonsterAdd_2;
-        private System.Windows.Forms.TextBox MonsterAdd_3;
         private System.Windows.Forms.Button m_add_1;
-        private System.Windows.Forms.Button m_add_2;
-        private System.Windows.Forms.Button m_add_3;
         private System.Windows.Forms.Button NeededSet;
         private System.Windows.Forms.TextBox m_qty;
         private System.Windows.Forms.Label label4;
@@ -467,6 +387,7 @@ namespace MapleStoryQuestHelper
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button instructions_;
+        private System.Windows.Forms.Button r_check;
     }
 }
 

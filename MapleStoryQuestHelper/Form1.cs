@@ -15,9 +15,14 @@ namespace MapleStoryQuestHelper
     {
 
         // rewards Data
-        string[] rewards = new string[3];
-        // Monster Data
-        string[] Monster = new string[3];
+        private int r_num = 0;
+        string[] rewardEntry = new string[10];
+
+        // monster Data
+        private int m_num = 0;
+        string[] monsterEntry = new string[10];
+
+        // set detail questInfo Data
         string NPC;
         string mapCode;
         string MonsterQty;
@@ -99,11 +104,14 @@ namespace MapleStoryQuestHelper
             XMLwriter.WriteLine($"<string name = \"name\" value = \"{qName.Text}\">"); // write questName
             XMLwriter.WriteLine($"<int name=\"area\" value=\"{area.Text}\"/>"); // write area value
             XMLwriter.WriteLine("<int name=\"resignBlocked\" value=\"1\"/>");
-            XMLwriter.WriteLine($"<string name = \"0\" value = #b#o{Monster[0]}##k을 #r{MonsterQty}#k명 퇴치하고 #b#m{mapCode}:##k의 #b#p{NPC}:##k에게 가자");
-            XMLwriter.WriteLine($"<string name = \"1\" value = #b#o{Monster[1]}##k을 #r{MonsterQty}#k명 퇴치하고 #b#m{mapCode}:##k의 #b#p{NPC}:##k에게 가자");
-            XMLwriter.WriteLine($"<string name = \"2\" value = #b#o{Monster[2]}##k을 #r{MonsterQty}#k명 퇴치하고 #b#m{mapCode}:##k의 #b#p{NPC}:##k에게 가자");
-            XMLwriter.WriteLine($"<string name = \"3\" value = #b#p{NPC}");
-            XMLwriter.WriteLine($"<string name = \"demandSummary\" value = \"#questorder1##o{Monster[0]}# #a{InputqNum.Text}#\n/>");
+           
+            // Monster Data Add
+            for (int i = 0; i < m_num; i++)
+            {
+                XMLwriter.WriteLine($"<string name = \"{i}\" value = #b#o{monsterEntry[i]}##k을 #r{MonsterQty}#k명 퇴치하고 #b#m{mapCode}:##k의 #b#p{NPC}:##k에게 가자");
+            }
+            XMLwriter.WriteLine($"<string name = \"{m_num + 1}\" value = #b#p{NPC}");
+            XMLwriter.WriteLine($"<string name = \"demandSummary\" value = \"#questorder1##o{monsterEntry[0]}# #a{InputqNum.Text}#\n/>");
             XMLwriter.Close();
             MessageBox.Show("Sucessfully write XML code");
         }
@@ -164,38 +172,9 @@ namespace MapleStoryQuestHelper
                 return;
             }
 
-            string reward = InputReward.Text;
-            rewards[0] = reward;
+            rewardEntry[r_num++] = InputReward.Text;
 
-            MessageBox.Show("rewards[0] = " + reward);
-        }
-
-        private void rwAdd_2_Click(object sender, EventArgs e)
-        {
-            if (InputReward2.TextLength < 7)
-            {
-                MessageBox.Show("보상 코드는 7 자리여야 합니다.");
-                return;
-            }
-            string reward = InputReward2.Text;
-            rewards[1] = reward;
-
-            MessageBox.Show("rewards[1] = " + reward);
-        }
-
-        private void rwAdd_3_Click(object sender, EventArgs e)
-        {
-
-            if (InputReward3.TextLength < 7)
-            {
-                MessageBox.Show("보상 코드는 7 자리여야 합니다.");
-                return;
-            }
-
-            string reward = InputReward3.Text;
-            rewards[2] = reward;
-
-            MessageBox.Show("rewards[2] = " + reward);
+            MessageBox.Show("Add Sucess");
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -211,36 +190,10 @@ namespace MapleStoryQuestHelper
                 MessageBox.Show("몬스터 코드는 7자리 이상이여야 합니다.");
                 return;
             }
-            string monster = MonsterAdd_1.Text;
-            Monster[0] = monster;
 
-            MessageBox.Show("Monster[0] = " + monster);
-        }
+            monsterEntry[m_num++] = MonsterAdd_1.Text;
 
-        private void m_add_2_Click(object sender, EventArgs e)
-        {
-            if (MonsterAdd_2.TextLength < 7)
-            {
-                MessageBox.Show("몬스터 코드는 7자리 이상이여야 합니다.");
-                return;
-            }
-            string monster = MonsterAdd_2.Text;
-            Monster[1] = monster;
-
-            MessageBox.Show("Monster[1] = " + monster);
-        }
-
-        private void m_add_3_Click(object sender, EventArgs e)
-        {
-            if (MonsterAdd_3.TextLength < 7)
-            {
-                MessageBox.Show("몬스터 코드는 7자리 이상이여야 합니다.");
-                return;
-            }
-            string monster = MonsterAdd_3.Text;
-            Monster[2] = monster;
-
-            MessageBox.Show("Monster[2] = " + monster);
+            MessageBox.Show("SuccessFully Add Monster");
         }
 
         private void NeededSet_Click(object sender, EventArgs e)
@@ -267,6 +220,24 @@ namespace MapleStoryQuestHelper
             string instructions = sb.ToString();
             MessageBox.Show(instructions);
             return;
+        }
+
+        private void r_check_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < r_num; i++)
+            {
+                sb.Append("rewardEntry[" + i + "] = ");
+                sb.Append(rewardEntry[i] + "\n");
+            }
+            
+            MessageBox.Show(sb.ToString() + "\n" + "r_num : " + r_num);
+        }
+
+        private void area_TextChanged(object sender, EventArgs e)
+        {
+            area.MaxLength = 4;
         }
     }
 }
