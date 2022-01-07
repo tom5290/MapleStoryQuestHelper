@@ -105,6 +105,7 @@ namespace MapleStoryQuestHelper
             StringBuilder r_sb = new StringBuilder();
             StringBuilder r_sb2 = new StringBuilder();
             XMLwriter = File.AppendText(path);
+
             // Quest Handling
             XMLwriter.WriteLine($"<imgdir name=\"{InputqNum.Text}>\""); // write QuestNumber
             XMLwriter.WriteLine($"<string name = \"name\" value = \"{qName.Text}\">"); // write questName
@@ -138,6 +139,10 @@ namespace MapleStoryQuestHelper
                 r_sb2.Append($"#t{rewardEntry[i]}:#");
             }
             XMLwriter.WriteLine($"<string name = \"rewardSummary\" value = \"{r_sb.ToString()}\"  {r_sb2.ToString()}");
+           
+            /*
+             *  Daily Quest Handler
+             */
             if (daily_q == true)
             {
                 XMLwriter.WriteLine("<int name = \"dailyAlarm\" value \"1\"/>");
@@ -145,6 +150,8 @@ namespace MapleStoryQuestHelper
             {
                 XMLwriter.WriteLine("<int name = \"dailyAlarm\" value \"0\"/>");
             }
+
+
             XMLwriter.WriteLine("</imgdir>");
             XMLwriter.Close();
             MessageBox.Show("Sucessfully write XML code");
@@ -162,7 +169,7 @@ namespace MapleStoryQuestHelper
 
         }
 
-
+ 
         // Create .js Quest
         private void button1_Click_2(object sender, EventArgs e)
         {
@@ -181,10 +188,10 @@ namespace MapleStoryQuestHelper
                 return;
             }
         }
-
+     
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-           
+     
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -239,6 +246,15 @@ namespace MapleStoryQuestHelper
             mapCode = mapId;
             MonsterQty = qty;
             NPC = npcId;
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Setting Info");
+            sb.AppendLine("m_qty : " + qty);
+            sb.AppendLine("mapId : " + mapId);
+            sb.AppendLine("npcId : " + npcId);
+            sb.AppendLine();
+            sb.Append("complete set neededset data !");
+            MessageBox.Show(sb.ToString());
         }
 
         private void instructions__Click(object sender, EventArgs e)
@@ -334,7 +350,7 @@ namespace MapleStoryQuestHelper
             {
                 writer.WriteLine("</imgdir>");
             }
-
+             
             writer.Close();
             MessageBox.Show("Successfully Check.xml Data");
         }
@@ -350,7 +366,6 @@ namespace MapleStoryQuestHelper
                     MessageBox.Show("create check.xml");
                 }
             }
-
         }
 
         private void m_qty_TextChanged(object sender, EventArgs e)

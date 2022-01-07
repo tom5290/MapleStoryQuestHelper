@@ -61,6 +61,11 @@ namespace MapleStoryQuestHelper
             this.create_checkData = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.checkData = new System.Windows.Forms.TextBox();
+            this.r_qty = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.r_code = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TextQuestInfoNum
@@ -208,9 +213,10 @@ namespace MapleStoryQuestHelper
             // MosnterAdd
             // 
             this.MosnterAdd.AutoSize = true;
+            this.MosnterAdd.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MosnterAdd.Location = new System.Drawing.Point(499, 51);
             this.MosnterAdd.Name = "MosnterAdd";
-            this.MosnterAdd.Size = new System.Drawing.Size(51, 12);
+            this.MosnterAdd.Size = new System.Drawing.Size(53, 14);
             this.MosnterAdd.TabIndex = 17;
             this.MosnterAdd.Text = "Monster";
             // 
@@ -237,7 +243,7 @@ namespace MapleStoryQuestHelper
             this.NeededSet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NeededSet.Location = new System.Drawing.Point(288, 135);
             this.NeededSet.Name = "NeededSet";
-            this.NeededSet.Size = new System.Drawing.Size(95, 101);
+            this.NeededSet.Size = new System.Drawing.Size(95, 177);
             this.NeededSet.TabIndex = 24;
             this.NeededSet.Text = "Setting";
             this.NeededSet.UseVisualStyleBackColor = true;
@@ -254,18 +260,20 @@ namespace MapleStoryQuestHelper
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(196, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 12);
+            this.label4.Size = new System.Drawing.Size(71, 14);
             this.label4.TabIndex = 26;
             this.label4.Text = "monsterQty";
             // 
             // Set_MapIds
             // 
             this.Set_MapIds.AutoSize = true;
+            this.Set_MapIds.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Set_MapIds.Location = new System.Drawing.Point(198, 159);
             this.Set_MapIds.Name = "Set_MapIds";
-            this.Set_MapIds.Size = new System.Drawing.Size(40, 12);
+            this.Set_MapIds.Size = new System.Drawing.Size(43, 14);
             this.Set_MapIds.TabIndex = 27;
             this.Set_MapIds.Text = "MapId";
             // 
@@ -278,17 +286,18 @@ namespace MapleStoryQuestHelper
             // 
             // set_npcId
             // 
-            this.set_npcId.Location = new System.Drawing.Point(197, 213);
+            this.set_npcId.Location = new System.Drawing.Point(198, 213);
             this.set_npcId.Name = "set_npcId";
-            this.set_npcId.Size = new System.Drawing.Size(83, 21);
+            this.set_npcId.Size = new System.Drawing.Size(82, 21);
             this.set_npcId.TabIndex = 29;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(198, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 12);
+            this.label5.Size = new System.Drawing.Size(37, 14);
             this.label5.TabIndex = 30;
             this.label5.Text = "npcId";
             // 
@@ -361,6 +370,7 @@ namespace MapleStoryQuestHelper
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Location = new System.Drawing.Point(533, 294);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 85);
@@ -378,12 +388,61 @@ namespace MapleStoryQuestHelper
             this.checkData.TabIndex = 39;
             this.checkData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // r_qty
+            // 
+            this.r_qty.AutoSize = true;
+            this.r_qty.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.r_qty.Location = new System.Drawing.Point(199, 249);
+            this.r_qty.Name = "r_qty";
+            this.r_qty.Size = new System.Drawing.Size(65, 14);
+            this.r_qty.TabIndex = 40;
+            this.r_qty.Text = "rewardQty";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(201, 291);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(81, 21);
+            this.textBox1.TabIndex = 41;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(201, 264);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(81, 21);
+            this.textBox2.TabIndex = 42;
+            // 
+            // r_code
+            // 
+            this.r_code.AutoSize = true;
+            this.r_code.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.r_code.Location = new System.Drawing.Point(155, 273);
+            this.r_code.Name = "r_code";
+            this.r_code.Size = new System.Drawing.Size(45, 14);
+            this.r_code.TabIndex = 43;
+            this.r_code.Text = "r_code";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(155, 294);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 14);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "r_qty";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(675, 483);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.r_code);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.r_qty);
             this.Controls.Add(this.checkData);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.create_checkData);
@@ -458,6 +517,11 @@ namespace MapleStoryQuestHelper
         private System.Windows.Forms.Button create_checkData;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox checkData;
+        private System.Windows.Forms.Label r_qty;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label r_code;
+        private System.Windows.Forms.Label label8;
     }
 }
 
