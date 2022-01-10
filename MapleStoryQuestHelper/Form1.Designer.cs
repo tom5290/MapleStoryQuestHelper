@@ -62,8 +62,8 @@ namespace MapleStoryQuestHelper
             this.button3 = new System.Windows.Forms.Button();
             this.checkData = new System.Windows.Forms.TextBox();
             this.r_qty = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.r_qtyData = new System.Windows.Forms.TextBox();
+            this.r_codeData = new System.Windows.Forms.TextBox();
             this.r_code = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -387,6 +387,7 @@ namespace MapleStoryQuestHelper
             this.checkData.Size = new System.Drawing.Size(114, 21);
             this.checkData.TabIndex = 39;
             this.checkData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.checkData.TextChanged += new System.EventHandler(this.checkData_TextChanged);
             // 
             // r_qty
             // 
@@ -398,19 +399,21 @@ namespace MapleStoryQuestHelper
             this.r_qty.TabIndex = 40;
             this.r_qty.Text = "rewardQty";
             // 
-            // textBox1
+            // r_qtyData
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 291);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(81, 21);
-            this.textBox1.TabIndex = 41;
+            this.r_qtyData.Location = new System.Drawing.Point(201, 291);
+            this.r_qtyData.Name = "r_qtyData";
+            this.r_qtyData.Size = new System.Drawing.Size(81, 21);
+            this.r_qtyData.TabIndex = 41;
+            this.r_qtyData.TextChanged += new System.EventHandler(this.r_qtyData_TextChanged);
             // 
-            // textBox2
+            // r_codeData
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 264);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(81, 21);
-            this.textBox2.TabIndex = 42;
+            this.r_codeData.Location = new System.Drawing.Point(201, 264);
+            this.r_codeData.Name = "r_codeData";
+            this.r_codeData.Size = new System.Drawing.Size(81, 21);
+            this.r_codeData.TabIndex = 42;
+            this.r_codeData.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // r_code
             // 
@@ -440,8 +443,8 @@ namespace MapleStoryQuestHelper
             this.ClientSize = new System.Drawing.Size(675, 483);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.r_code);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.r_codeData);
+            this.Controls.Add(this.r_qtyData);
             this.Controls.Add(this.r_qty);
             this.Controls.Add(this.checkData);
             this.Controls.Add(this.button3);
@@ -518,8 +521,8 @@ namespace MapleStoryQuestHelper
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox checkData;
         private System.Windows.Forms.Label r_qty;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox r_qtyData;
+        private System.Windows.Forms.TextBox r_codeData;
         private System.Windows.Forms.Label r_code;
         private System.Windows.Forms.Label label8;
     }

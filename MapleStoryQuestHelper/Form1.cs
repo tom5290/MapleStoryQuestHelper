@@ -11,21 +11,26 @@ using System.Windows.Forms;
 
 namespace MapleStoryQuestHelper
 {
+
     public partial class Form1 : Form
     {
+        private const string FORMNAME = "MapleQuestHandler";
 
         // rewards Data
         private int r_num = 0;
-        string[] rewardEntry = new string[10];
+        private static string[] rewardEntry = new string[10];
 
+        private static int arg1, arg2; 
+        private int[,] r_data = new int[arg1, arg2];
+        
         // monster Data
         private int m_num = 0;
         string[] monsterEntry = new string[10];
 
         // set detail questInfo Data
-        string NPC;
-        string mapCode;
-        string MonsterQty;
+        private string NPC;
+        private string mapCode;
+        private string MonsterQty;
 
         // Daily Quest Checking
         private bool daily_q = false;
@@ -37,8 +42,14 @@ namespace MapleStoryQuestHelper
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string msg = "Do you wanna open this form?";
+            string title = FORMNAME;
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(msg, title, btns);
+    
+            if(result == DialogResult.No) this.Close();
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
               
@@ -59,7 +70,19 @@ namespace MapleStoryQuestHelper
                 CreateXmlFile();
             }
         }
+        
+        private void savedRewardData()
+        {
+            int num = r_num;
 
+            for (int i = 0; i < 10; ++i)
+            {
+                for (int j = 0; j < 10; ++j)
+                {
+                    r_data[i, j] = num + 1;
+                }
+            }
+        }
 
         private void CreateXmlFile()
         {
@@ -379,6 +402,23 @@ namespace MapleStoryQuestHelper
             string path = $"C:\\test\\{a}check.xml";
 
             write_check_xml(path);
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkData_TextChanged(object sender, EventArgs e)
+        {
+            int num =  int.Parse(checkData.Text);
+            arg1 = num;
+            arg2 = num;
+        }
+
+        private void r_qtyData_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
